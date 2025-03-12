@@ -1,4 +1,4 @@
-16:54:21 **** Auto Build of configuration Debug for project run-zns-core1 ****
+16:55:18 **** Auto Build of configuration Debug for project run-zns-core1 ****
 make all 
 'Building file: ../src/main.c'
 'Invoking: ARM v8 gcc compiler'
@@ -24,5 +24,5 @@ c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf
 collect2.exe: error: ld returned 1 exit status
 make: *** [makefile:39: run-zns-core1.elf] Error 1
 
-16:54:22 Build Finished (took 1s.69ms)
+16:55:19 Build Finished (took 944ms)
 
