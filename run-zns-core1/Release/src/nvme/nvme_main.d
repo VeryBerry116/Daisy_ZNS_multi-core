@@ -1,0 +1,92 @@
+src/nvme/nvme_main.o src/nvme/nvme_main.o: ../src/nvme/nvme_main.c \
+ ../../run-zns-core1_bsp/psu_cortexa53_1/include/xil_printf.h \
+ ../../run-zns-core1_bsp/psu_cortexa53_1/include/xil_types.h \
+ ../../run-zns-core1_bsp/psu_cortexa53_1/include/xparameters.h \
+ ../../run-zns-core1_bsp/psu_cortexa53_1/include/xparameters_ps.h \
+ ../../run-zns-core1_bsp/psu_cortexa53_1/include/bspconfig.h \
+ ../src/nvme/debug.h ../src/nvme/nvme.h ../src/nvme/io_access.h \
+ ../src/nvme/host_lld.h ../src/nvme/nvme_main.h \
+ ../src/nvme/nvme_admin_cmd.h ../src/nvme/nvme_io_cmd.h \
+ ../src/nvme/../ftl_config.h ../src/nvme/../nsc_driver.h \
+ ../src/nvme/../t4nsc_pm.h \
+ ../../run-zns-core1_bsp/psu_cortexa53_1/include/xparameters.h \
+ ../src/nvme/../nvme/nvme.h ../src/nvme/../request_schedule.h \
+ ../src/nvme/../ftl_config.h ../src/nvme/../request_allocation.h \
+ ../src/nvme/../request_format.h ../src/nvme/../request_queue.h \
+ ../src/nvme/../request_transform.h ../src/nvme/../address_translation.h \
+ ../src/nvme/../memory_map.h ../src/nvme/../data_buffer.h \
+ ../src/nvme/../address_translation.h ../src/nvme/../request_allocation.h \
+ ../src/nvme/../request_schedule.h ../src/nvme/../request_transform.h \
+ ../src/nvme/../nvme_io_cmd_completion.h ../src/nvme/../request_ipc.h \
+ ../src/nvme/zns.h ../src/nvme/queue.h \
+ ../../run-zns-core1_bsp/psu_cortexa53_1/include/xil_types.h
+
+../../run-zns-core1_bsp/psu_cortexa53_1/include/xil_printf.h:
+
+../../run-zns-core1_bsp/psu_cortexa53_1/include/xil_types.h:
+
+../../run-zns-core1_bsp/psu_cortexa53_1/include/xparameters.h:
+
+../../run-zns-core1_bsp/psu_cortexa53_1/include/xparameters_ps.h:
+
+../../run-zns-core1_bsp/psu_cortexa53_1/include/bspconfig.h:
+
+../src/nvme/debug.h:
+
+../src/nvme/nvme.h:
+
+../src/nvme/io_access.h:
+
+../src/nvme/host_lld.h:
+
+../src/nvme/nvme_main.h:
+
+../src/nvme/nvme_admin_cmd.h:
+
+../src/nvme/nvme_io_cmd.h:
+
+../src/nvme/../ftl_config.h:
+
+../src/nvme/../nsc_driver.h:
+
+../src/nvme/../t4nsc_pm.h:
+
+../../run-zns-core1_bsp/psu_cortexa53_1/include/xparameters.h:
+
+../src/nvme/../nvme/nvme.h:
+
+../src/nvme/../request_schedule.h:
+
+../src/nvme/../ftl_config.h:
+
+../src/nvme/../request_allocation.h:
+
+../src/nvme/../request_format.h:
+
+../src/nvme/../request_queue.h:
+
+../src/nvme/../request_transform.h:
+
+../src/nvme/../address_translation.h:
+
+../src/nvme/../memory_map.h:
+
+../src/nvme/../data_buffer.h:
+
+../src/nvme/../address_translation.h:
+
+../src/nvme/../request_allocation.h:
+
+../src/nvme/../request_schedule.h:
+
+../src/nvme/../request_transform.h:
+
+../src/nvme/../nvme_io_cmd_completion.h:
+
+../src/nvme/../request_ipc.h:
+
+../src/nvme/zns.h:
+
+../src/nvme/queue.h:
+
+../../run-zns-core1_bsp/psu_cortexa53_1/include/xil_types.h:

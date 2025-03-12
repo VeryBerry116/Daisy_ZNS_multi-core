@@ -1,0 +1,314 @@
+10:17:59 **** Incremental Build of configuration Release for project run-zns-core1 ****
+make all 
+'Building file: ../src/nvme/debug.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/nvme/debug.o" -I../../run-zns-core1_bsp/psu_cortexa53_1/include -MMD -MP -MF"src/nvme/debug.d" -MT"src/nvme/debug.o" -o "src/nvme/debug.o" "../src/nvme/debug.c"
+'Finished building: ../src/nvme/debug.c'
+' '
+'Building file: ../src/nvme/host_lld.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/nvme/host_lld.o" -I../../run-zns-core1_bsp/psu_cortexa53_1/include -MMD -MP -MF"src/nvme/host_lld.d" -MT"src/nvme/host_lld.o" -o "src/nvme/host_lld.o" "../src/nvme/host_lld.c"
+In file included from ../src/nvme/host_lld.c:61:
+../src/nvme/host_lld.c: In function 'get_nvme_cmd':
+../src/nvme/io_access.h:52:30: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define IO_READ32(addr)    *((volatile unsigned int *)(addr))
+                              ^
+../src/nvme/host_lld.c:262:24: note: in expansion of macro 'IO_READ32'
+    *(cmdDword + idx) = IO_READ32(addr + (idx * 4));
+                        ^~~~~~~~~
+../src/nvme/host_lld.c: In function 'set_io_sq':
+../src/nvme/io_access.h:51:34: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define IO_WRITE32(addr, val)  *((volatile unsigned int *)(addr)) = val
+                                  ^
+../src/nvme/host_lld.c:321:2: note: in expansion of macro 'IO_WRITE32'
+  IO_WRITE32(addr, nvmeReg.dword[0]);
+  ^~~~~~~~~~
+../src/nvme/io_access.h:51:34: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define IO_WRITE32(addr, val)  *((volatile unsigned int *)(addr)) = val
+                                  ^
+../src/nvme/host_lld.c:322:2: note: in expansion of macro 'IO_WRITE32'
+  IO_WRITE32((addr + 4), nvmeReg.dword[1]);
+  ^~~~~~~~~~
+../src/nvme/host_lld.c: In function 'set_io_cq':
+../src/nvme/io_access.h:51:34: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define IO_WRITE32(addr, val)  *((volatile unsigned int *)(addr)) = val
+                                  ^
+../src/nvme/host_lld.c:338:2: note: in expansion of macro 'IO_WRITE32'
+  IO_WRITE32(addr, nvmeReg.dword[0]);
+  ^~~~~~~~~~
+../src/nvme/io_access.h:51:34: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define IO_WRITE32(addr, val)  *((volatile unsigned int *)(addr)) = val
+                                  ^
+../src/nvme/host_lld.c:339:2: note: in expansion of macro 'IO_WRITE32'
+  IO_WRITE32((addr + 4), nvmeReg.dword[1]);
+  ^~~~~~~~~~
+../src/nvme/host_lld.c: In function 'set_direct_tx_dma':
+../src/nvme/host_lld.c:363:64: warning: 'hostDmaReg.<Uebe0>.dword[4]' is used uninitialized in this function [-Wuninitialized]
+  IO_WRITE32((HOST_DMA_CMD_FIFO_REG_ADDR + 16), hostDmaReg.dword[4]);//slot_modified
+                                                                ^
+In file included from ../src/nvme/host_lld.c:61:
+../src/nvme/io_access.h:51:67: warning: 'hostDmaReg.<Uebe0>.dword[4]' is used uninitialized in this function [-Wuninitialized]
+ #define IO_WRITE32(addr, val)  *((volatile unsigned int *)(addr)) = val
+                                                                   ^
+../src/nvme/host_lld.c:346:24: note: 'hostDmaReg.<Uebe0>.dword[4]' was declared here
+  HOST_DMA_CMD_FIFO_REG hostDmaReg;
+                        ^~~~~~~~~~
+In file included from ../src/nvme/host_lld.c:61:
+../src/nvme/host_lld.c: In function 'set_direct_rx_dma':
+../src/nvme/io_access.h:51:67: warning: 'hostDmaReg.<Uebe0>.dword[4]' may be used uninitialized in this function [-Wmaybe-uninitialized]
+ #define IO_WRITE32(addr, val)  *((volatile unsigned int *)(addr)) = val
+                                                                   ^
+../src/nvme/host_lld.c:371:24: note: 'hostDmaReg.<Uebe0>.dword[4]' was declared here
+  HOST_DMA_CMD_FIFO_REG hostDmaReg;
+                        ^~~~~~~~~~
+'Finished building: ../src/nvme/host_lld.c'
+' '
+'Building file: ../src/nvme/nvme_admin_cmd.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/nvme/nvme_admin_cmd.o" -I../../run-zns-core1_bsp/psu_cortexa53_1/include -MMD -MP -MF"src/nvme/nvme_admin_cmd.d" -MT"src/nvme/nvme_admin_cmd.o" -o "src/nvme/nvme_admin_cmd.o" "../src/nvme/nvme_admin_cmd.c"
+../src/nvme/nvme_admin_cmd.c: In function 'handle_identify':
+../src/nvme/nvme_admin_cmd.c:388:3: warning: implicit declaration of function 'active_namespace_identification'; did you mean 'zns_namespace_identification'? [-Wimplicit-function-declaration]
+   active_namespace_identification(pIdentifyData);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   zns_namespace_identification
+../src/nvme/nvme_admin_cmd.c:405:16: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+         memset((void *)pIdentifyData, 0, sizeof(ADMIN_IDENTIFY_CONTROLLER));
+                ^
+'Finished building: ../src/nvme/nvme_admin_cmd.c'
+' '
+'Building file: ../src/nvme/nvme_identify.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/nvme/nvme_identify.o" -I../../run-zns-core1_bsp/psu_cortexa53_1/include -MMD -MP -MF"src/nvme/nvme_identify.d" -MT"src/nvme/nvme_identify.o" -o "src/nvme/nvme_identify.o" "../src/nvme/nvme_identify.c"
+../src/nvme/nvme_identify.c: In function 'controller_identification':
+../src/nvme/nvme_identify.c:67:17: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  identifyCNTL = (ADMIN_IDENTIFY_CONTROLLER*)pBuffer;
+                 ^
+../src/nvme/nvme_identify.c: In function 'namespace_identification':
+../src/nvme/nvme_identify.c:159:15: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  identifyNS = (ADMIN_IDENTIFY_NAMESPACE *)pBuffer;
+               ^
+../src/nvme/nvme_identify.c: In function 'zns_namespace_identification':
+../src/nvme/nvme_identify.c:209:15: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  identifyNS = (ADMIN_IDENTIFY_ZNS_NAMESPACE *)pBuffer;
+               ^
+../src/nvme/nvme_identify.c: In function 'zns_controller_identification':
+../src/nvme/nvme_identify.c:225:17: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  identifyCNTL = (ADMIN_IDENTIFY_ZNS_CONTROLLER *)pBuffer;
+                 ^
+../src/nvme/nvme_identify.c: In function 'nvme_identify_cmd_set':
+../src/nvme/nvme_identify.c:234:27: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+     unsigned char *list = (unsigned char *)pBuffer;
+                           ^
+../src/nvme/nvme_identify.c: In function 'active_namespace_identification':
+../src/nvme/nvme_identify.c:248:18: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+     identifyNS = (ADMIN_IDENTIFY_ACTIVE_NAMESPACE *)pBuffer;
+                  ^
+'Finished building: ../src/nvme/nvme_identify.c'
+' '
+'Building file: ../src/nvme/nvme_io_cmd.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/nvme/nvme_io_cmd.o" -I../../run-zns-core1_bsp/psu_cortexa53_1/include -MMD -MP -MF"src/nvme/nvme_io_cmd.d" -MT"src/nvme/nvme_io_cmd.o" -o "src/nvme/nvme_io_cmd.o" "../src/nvme/nvme_io_cmd.c"
+'Finished building: ../src/nvme/nvme_io_cmd.c'
+' '
+'Building file: ../src/nvme/nvme_main.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/nvme/nvme_main.o" -I../../run-zns-core1_bsp/psu_cortexa53_1/include -MMD -MP -MF"src/nvme/nvme_main.d" -MT"src/nvme/nvme_main.o" -o "src/nvme/nvme_main.o" "../src/nvme/nvme_main.c"
+../src/nvme/nvme_main.c:78:21: error: conflicting types for 'nvme_m2_storage'
+ static unsigned int nvme_m2_storage;
+                     ^~~~~~~~~~~~~~~
+In file included from ../src/nvme/debug.h:51,
+                 from ../src/nvme/nvme_main.c:60:
+../src/nvme/nvme.h:58:21: note: previous declaration of 'nvme_m2_storage' was here
+ extern unsigned int nvme_m2_storage[NUM_NVME_M2];
+                     ^~~~~~~~~~~~~~~
+../src/nvme/nvme_main.c: In function 'nvme_main':
+../src/nvme/nvme_main.c:90:3: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  *(unsigned int *)storage_info_addr = nvme_m2_storage;
+   ^
+../src/nvme/nvme_main.c:91:3: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  *(unsigned int *)start_res_addr = 1;
+   ^
+../src/nvme/nvme_main.c:95:6: warning: implicit declaration of function 'ProcessNvmeM2Req'; did you mean 'ProcessNvmeM2Res'? [-Wimplicit-function-declaration]
+      ProcessNvmeM2Req();
+      ^~~~~~~~~~~~~~~~
+      ProcessNvmeM2Res
+../src/nvme/nvme_main.c:86:6: warning: unused variable 'bar' [-Wunused-variable]
+  u64 bar;
+      ^~~
+../src/nvme/nvme_main.c:85:6: warning: unused variable 'Status' [-Wunused-variable]
+  int Status;
+      ^~~~~~
+At top level:
+../src/nvme/nvme_main.c:81:27: warning: 'bar_addr' defined but not used [-Wunused-const-variable=]
+ static const unsigned int bar_addr = IPC_BAR_CORE1_ADDR;
+                           ^~~~~~~~
+make: *** [src/nvme/subdir.mk:38: src/nvme/nvme_main.o] Error 1
+
+10:18:02 Build Finished (took 2s.341ms)
+
+10:18:02 **** Incremental Build of configuration Debug for project run-zns-core1 ****
+make all 
+'Building file: ../src/nvme/nvme_main.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/nvme/nvme_main.o" -I../../run-zns-core1_bsp/psu_cortexa53_1/include -MMD -MP -MF"src/nvme/nvme_main.d" -MT"src/nvme/nvme_main.o" -o "src/nvme/nvme_main.o" "../src/nvme/nvme_main.c"
+../src/nvme/nvme_main.c:78:21: error: conflicting types for 'nvme_m2_storage'
+ static unsigned int nvme_m2_storage;
+                     ^~~~~~~~~~~~~~~
+In file included from ../src/nvme/debug.h:51,
+                 from ../src/nvme/nvme_main.c:60:
+../src/nvme/nvme.h:58:21: note: previous declaration of 'nvme_m2_storage' was here
+ extern unsigned int nvme_m2_storage[NUM_NVME_M2];
+                     ^~~~~~~~~~~~~~~
+../src/nvme/nvme_main.c: In function 'nvme_main':
+../src/nvme/nvme_main.c:90:3: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  *(unsigned int *)storage_info_addr = nvme_m2_storage;
+   ^
+../src/nvme/nvme_main.c:91:3: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  *(unsigned int *)start_res_addr = 1;
+   ^
+../src/nvme/nvme_main.c:95:6: warning: implicit declaration of function 'ProcessNvmeM2Req'; did you mean 'ProcessNvmeM2Res'? [-Wimplicit-function-declaration]
+      ProcessNvmeM2Req();
+      ^~~~~~~~~~~~~~~~
+      ProcessNvmeM2Res
+../src/nvme/nvme_main.c:86:6: warning: unused variable 'bar' [-Wunused-variable]
+  u64 bar;
+      ^~~
+../src/nvme/nvme_main.c:85:6: warning: unused variable 'Status' [-Wunused-variable]
+  int Status;
+      ^~~~~~
+At top level:
+../src/nvme/nvme_main.c:81:27: warning: 'bar_addr' defined but not used [-Wunused-const-variable=]
+ static const unsigned int bar_addr = IPC_BAR_CORE1_ADDR;
+                           ^~~~~~~~
+make: *** [src/nvme/subdir.mk:38: src/nvme/nvme_main.o] Error 1
+10:20:11 **** Auto Build of configuration Debug for project run-zns-core1 ****
+make all 
+'Building file: ../src/nvme/nvme_main.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/nvme/nvme_main.o" -I../../run-zns-core1_bsp/psu_cortexa53_1/include -MMD -MP -MF"src/nvme/nvme_main.d" -MT"src/nvme/nvme_main.o" -o "src/nvme/nvme_main.o" "../src/nvme/nvme_main.c"
+../src/nvme/nvme_main.c: In function 'nvme_main':
+../src/nvme/nvme_main.c:88:3: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  *(unsigned int *)start_res_addr = 1;
+   ^
+../src/nvme/nvme_main.c:92:6: warning: implicit declaration of function 'ProcessNvmeM2Req'; did you mean 'ProcessNvmeM2Res'? [-Wimplicit-function-declaration]
+      ProcessNvmeM2Req();
+      ^~~~~~~~~~~~~~~~
+      ProcessNvmeM2Res
+../src/nvme/nvme_main.c:84:6: warning: unused variable 'bar' [-Wunused-variable]
+  u64 bar;
+      ^~~
+../src/nvme/nvme_main.c:83:6: warning: unused variable 'Status' [-Wunused-variable]
+  int Status;
+      ^~~~~~
+At top level:
+../src/nvme/nvme_main.c:79:27: warning: 'bar_addr' defined but not used [-Wunused-const-variable=]
+ static const unsigned int bar_addr = IPC_BAR_CORE1_ADDR;
+                           ^~~~~~~~
+'Finished building: ../src/nvme/nvme_main.c'
+' '
+'Building target: run-zns-core1.elf'
+'Invoking: ARM v8 gcc linker'
+aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -L../../run-zns-core1_bsp/psu_cortexa53_1/lib -o "run-zns-core1.elf"  ./src/nvme/debug.o ./src/nvme/host_lld.o ./src/nvme/nvme_admin_cmd.o ./src/nvme/nvme_identify.o ./src/nvme/nvme_io_cmd.o ./src/nvme/nvme_main.o ./src/nvme/zns.o  ./src/address_translation.o ./src/data_buffer.o ./src/ftl_config.o ./src/main.o ./src/nsc_driver.o ./src/nvme_io_cmd_completion.o ./src/request_allocation.o ./src/request_ipc.o ./src/request_schedule.o ./src/request_transform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: ./src/nvme/host_lld.o: in function `dev_irq_handler':
+C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/nvme/host_lld.c:106: undefined reference to `g_nvmeTask'
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/nvme/host_lld.c:106: undefined reference to `g_nvmeTask'
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/nvme/host_lld.c:144: undefined reference to `g_nvmeTask'
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/nvme/host_lld.c:144: undefined reference to `g_nvmeTask'
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/nvme/host_lld.c:146: undefined reference to `g_nvmeTask'
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: ./src/nvme/host_lld.o:C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/nvme/host_lld.c:146: more undefined references to `g_nvmeTask' follow
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: ./src/nvme/nvme_main.o: in function `nvme_main':
+C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/nvme/nvme_main.c:92: undefined reference to `ProcessNvmeM2Req'
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: ./src/request_ipc.o: in function `SubmitNvmeM2Req':
+C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/request_ipc.c:69: undefined reference to `nvme_m2_storage'
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/request_ipc.c:69: undefined reference to `nvme_m2_storage'
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/request_ipc.c:72: undefined reference to `nvme_m2_storage'
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/request_ipc.c:72: undefined reference to `nvme_m2_storage'
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: ./src/request_ipc.o: in function `ProcessNvmeM2Res':
+C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/request_ipc.c:96: undefined reference to `GetFromNvmeM2ReqQ'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:39: run-zns-core1.elf] Error 1
+10:21:43 **** Auto Build of configuration Debug for project run-zns-core1 ****
+make all 
+'Building file: ../src/request_ipc.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/request_ipc.o" -I../../run-zns-core1_bsp/psu_cortexa53_1/include -MMD -MP -MF"src/request_ipc.d" -MT"src/request_ipc.o" -o "src/request_ipc.o" "../src/request_ipc.c"
+../src/request_ipc.c: In function 'SubmitNvmeM2Req':
+../src/request_ipc.c:83:59: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+     ipcQPtr->queue[chNo][IPC_TYPE_REQ][reqHead].bufAddr = (void *)GenerateDataBufAddr(reqSlotTag);
+                                                           ^
+../src/request_ipc.c: In function 'ProcessNvmeM2Req':
+../src/request_ipc.c:103:29: warning: initialization of 'unsigned char' from 'unsigned char *' makes integer from pointer without a cast [-Wint-conversion]
+     unsigned char reqTail = ipcQueueIdx[IPC_TYPE_REQ];
+                             ^~~~~~~~~~~
+../src/request_ipc.c:119:13: warning: implicit declaration of function 'read_nvme' [-Wimplicit-function-declaration]
+             read_nvme(startLba * NVME_BLOCKS_PER_SLICE, DstAddr, NVME_BLOCKS_PER_SLICE);
+             ^~~~~~~~~
+../src/request_ipc.c:123:13: warning: implicit declaration of function 'write_nvme' [-Wimplicit-function-declaration]
+             write_nvme(startLba * NVME_BLOCKS_PER_SLICE, DstAddr, NVME_BLOCKS_PER_SLICE);
+             ^~~~~~~~~~
+../src/request_ipc.c:126:44: error: lvalue required as increment operand
+         resHead = ipcQueueIdx[IPC_TYPE_RES]++;
+                                            ^~
+../src/request_ipc.c:136:19: error: lvalue required as increment operand
+         reqTail = ++ipcQueueIdx[IPC_TYPE_REQ];
+                   ^~
+make: *** [src/subdir.mk:50: src/request_ipc.o] Error 1
+10:22:09 **** Auto Build of configuration Debug for project run-zns-core1 ****
+make all 
+'Building file: ../src/request_ipc.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/request_ipc.o" -I../../run-zns-core1_bsp/psu_cortexa53_1/include -MMD -MP -MF"src/request_ipc.d" -MT"src/request_ipc.o" -o "src/request_ipc.o" "../src/request_ipc.c"
+../src/request_ipc.c: In function 'SubmitNvmeM2Req':
+../src/request_ipc.c:75:32: error: subscripted value is neither array nor pointer nor vector
+     reqHead = ipcQueueIdx[chNo][IPC_TYPE_REQ];
+                                ^
+../src/request_ipc.c:83:59: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+     ipcQPtr->queue[chNo][IPC_TYPE_REQ][reqHead].bufAddr = (void *)GenerateDataBufAddr(reqSlotTag);
+                                                           ^
+../src/request_ipc.c:86:22: error: subscripted value is neither array nor pointer nor vector
+     ipcQueueIdx[chNo][IPC_TYPE_REQ]++;
+                      ^
+../src/request_ipc.c: In function 'ProcessNvmeM2Res':
+../src/request_ipc.c:91:46: error: subscripted value is neither array nor pointer nor vector
+     unsigned char resTail = ipcQueueIdx[chNo][IPC_TYPE_RES];
+                                              ^
+../src/request_ipc.c:97:38: error: subscripted value is neither array nor pointer nor vector
+         resTail = ++ipcQueueIdx[chNo][IPC_TYPE_RES];
+                                      ^
+../src/request_ipc.c: In function 'ProcessNvmeM2Req':
+../src/request_ipc.c:119:13: warning: implicit declaration of function 'read_nvme' [-Wimplicit-function-declaration]
+             read_nvme(startLba * NVME_BLOCKS_PER_SLICE, DstAddr, NVME_BLOCKS_PER_SLICE);
+             ^~~~~~~~~
+../src/request_ipc.c:123:13: warning: implicit declaration of function 'write_nvme' [-Wimplicit-function-declaration]
+             write_nvme(startLba * NVME_BLOCKS_PER_SLICE, DstAddr, NVME_BLOCKS_PER_SLICE);
+             ^~~~~~~~~~
+make: *** [src/subdir.mk:50: src/request_ipc.o] Error 1
+10:22:39 **** Auto Build of configuration Debug for project run-zns-core1 ****
+make all 
+'Building file: ../src/request_ipc.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/request_ipc.o" -I../../run-zns-core1_bsp/psu_cortexa53_1/include -MMD -MP -MF"src/request_ipc.d" -MT"src/request_ipc.o" -o "src/request_ipc.o" "../src/request_ipc.c"
+../src/request_ipc.c: In function 'ProcessNvmeM2Req':
+../src/request_ipc.c:81:13: warning: implicit declaration of function 'read_nvme' [-Wimplicit-function-declaration]
+             read_nvme(startLba * NVME_BLOCKS_PER_SLICE, DstAddr, NVME_BLOCKS_PER_SLICE);
+             ^~~~~~~~~
+../src/request_ipc.c:85:13: warning: implicit declaration of function 'write_nvme' [-Wimplicit-function-declaration]
+             write_nvme(startLba * NVME_BLOCKS_PER_SLICE, DstAddr, NVME_BLOCKS_PER_SLICE);
+             ^~~~~~~~~~
+'Finished building: ../src/request_ipc.c'
+' '
+'Building target: run-zns-core1.elf'
+'Invoking: ARM v8 gcc linker'
+aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -L../../run-zns-core1_bsp/psu_cortexa53_1/lib -o "run-zns-core1.elf"  ./src/nvme/debug.o ./src/nvme/host_lld.o ./src/nvme/nvme_admin_cmd.o ./src/nvme/nvme_identify.o ./src/nvme/nvme_io_cmd.o ./src/nvme/nvme_main.o ./src/nvme/zns.o  ./src/address_translation.o ./src/data_buffer.o ./src/ftl_config.o ./src/main.o ./src/nsc_driver.o ./src/nvme_io_cmd_completion.o ./src/request_allocation.o ./src/request_ipc.o ./src/request_schedule.o ./src/request_transform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: ./src/nvme/host_lld.o: in function `dev_irq_handler':
+C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/nvme/host_lld.c:106: undefined reference to `g_nvmeTask'
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/nvme/host_lld.c:106: undefined reference to `g_nvmeTask'
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/nvme/host_lld.c:144: undefined reference to `g_nvmeTask'
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/nvme/host_lld.c:144: undefined reference to `g_nvmeTask'
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/nvme/host_lld.c:146: undefined reference to `g_nvmeTask'
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: ./src/nvme/host_lld.o:C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/nvme/host_lld.c:146: more undefined references to `g_nvmeTask' follow
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: ./src/request_ipc.o: in function `ProcessNvmeM2Req':
+C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/request_ipc.c:81: undefined reference to `read_nvme'
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/request_ipc.c:85: undefined reference to `write_nvme'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:39: run-zns-core1.elf] Error 1
