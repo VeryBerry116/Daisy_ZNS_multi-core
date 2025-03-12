@@ -21977,3 +21977,43 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.xilinx.sdk.utils 0 0 2025-03-12 16:48:02.310
 !MESSAGE XSCT command with result: [::hsi::utils::openhw C:/Daisy_ZNS_multi-core/sys_top_wrapper_hw_platform_0/system.hdf], Result: [null, ]. Thread: Worker-7
+!SESSION 2025-03-12 16:50:54.307 -----------------------------------------------
+eclipse.buildId=2019.1
+java.version=1.8.0_112
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui 2 0 2025-03-12 16:50:58.320
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-03-12 16:50:58.320
+!MESSAGE Commands should really have a category: plug-in='com.xilinx.sdk.appwiz', id='com.xilinx.sdk.app.commands.ChangeAtfBuiltReferences', categoryId='com.xilinx.sdk.app.commands.category'
+
+!ENTRY org.eclipse.ui 2 0 2025-03-12 16:50:59.009
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-03-12 16:50:59.009
+!MESSAGE Commands should really have a category: plug-in='com.xilinx.sdk.appwiz', id='com.xilinx.sdk.app.commands.ChangeAtfBuiltReferences', categoryId='com.xilinx.sdk.app.commands.category'
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-03-12 16:51:06.807
+!MESSAGE XSCT Command: [::hsi::utils::init_repo], Thread: Worker-2
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-03-12 16:51:06.808
+!MESSAGE XSCT Command: [set sdk::sdk_chan tcfchan#0], Thread: Thread-16
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-03-12 16:51:07.110
+!MESSAGE XSCT command with result: [::hsi::utils::init_repo], Result: [null, ]. Thread: Worker-2
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-03-12 16:51:07.111
+!MESSAGE XSCT command with result: [set sdk::sdk_chan tcfchan#0], Result: [null, tcfchan#0]. Thread: Thread-16
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-03-12 16:51:07.112
+!MESSAGE XSCT Command: [setws C:/Daisy_ZNS_multi-core], Thread: Thread-16
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-03-12 16:51:07.114
+!MESSAGE XSCT command with result: [setws C:/Daisy_ZNS_multi-core], Result: [null, ]. Thread: Thread-16
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-03-12 16:51:07.148
+!MESSAGE XSCT Command: [::hsi::utils::openhw C:/Daisy_ZNS_multi-core/sys_top_wrapper_hw_platform_0/system.hdf], Thread: Worker-1
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-03-12 16:51:17.011
+!MESSAGE XSCT command with result: [::hsi::utils::openhw C:/Daisy_ZNS_multi-core/sys_top_wrapper_hw_platform_0/system.hdf], Result: [null, ]. Thread: Worker-1

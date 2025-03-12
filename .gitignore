@@ -1,2 +1,4 @@
 /.metadata
 SDK.log
+*.d
+*.o

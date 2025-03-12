@@ -341,3 +341,28 @@ C:\Daisy_ZNS_multi-core\run-zns-core1\Debug/../src/request_ipc.c:82: undefined r
 c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: C:\Daisy_ZNS_multi-core\run-zns-core1\Debug/../src/request_ipc.c:87: undefined reference to `write_nvme'
 collect2.exe: error: ld returned 1 exit status
 make: *** [makefile:39: run-zns-core1.elf] Error 1
+16:54:21 **** Auto Build of configuration Debug for project run-zns-core1 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../run-zns-core1_bsp/psu_cortexa53_1/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: run-zns-core1.elf'
+'Invoking: ARM v8 gcc linker'
+aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -L../../run-zns-core1_bsp/psu_cortexa53_1/lib -o "run-zns-core1.elf"  ./src/nvme/debug.o ./src/nvme/host_lld.o ./src/nvme/nvme_admin_cmd.o ./src/nvme/nvme_identify.o ./src/nvme/nvme_io_cmd.o ./src/nvme/nvme_main.o ./src/nvme/zns.o  ./src/address_translation.o ./src/data_buffer.o ./src/ftl_config.o ./src/main.o ./src/nsc_driver.o ./src/nvme_io_cmd_completion.o ./src/request_allocation.o ./src/request_ipc.o ./src/request_schedule.o ./src/request_transform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: ./src/nvme/host_lld.o: in function `dev_irq_handler':
+C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/nvme/host_lld.c:106: undefined reference to `g_nvmeTask'
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/nvme/host_lld.c:106: undefined reference to `g_nvmeTask'
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/nvme/host_lld.c:144: undefined reference to `g_nvmeTask'
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/nvme/host_lld.c:144: undefined reference to `g_nvmeTask'
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/nvme/host_lld.c:146: undefined reference to `g_nvmeTask'
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: ./src/nvme/host_lld.o:C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/nvme/host_lld.c:146: more undefined references to `g_nvmeTask' follow
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: ./src/nvme/nvme_main.o: in function `nvme_main':
+C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/nvme/nvme_main.c:88: undefined reference to `start_res_addr'
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: C:\Daisy_ZNS_multi\run-zns-core1\Debug/../src/nvme/nvme_main.c:88: undefined reference to `start_res_addr'
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: ./src/request_ipc.o: in function `ProcessNvmeM2Req':
+C:\Daisy_ZNS_multi-core\run-zns-core1\Debug/../src/request_ipc.c:82: undefined reference to `read_nvme'
+c:/xilinx/sdk/2019.1/gnu/aarch64/nt/aarch64-none/bin/../lib/gcc/aarch64-none-elf/8.2.0/../../../../aarch64-none-elf/bin/ld.exe: C:\Daisy_ZNS_multi-core\run-zns-core1\Debug/../src/request_ipc.c:87: undefined reference to `write_nvme'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:39: run-zns-core1.elf] Error 1

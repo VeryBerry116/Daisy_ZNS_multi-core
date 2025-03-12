@@ -81,6 +81,7 @@ extern const unsigned int start_res_addr[];
 
 int main()
 {
+	// need to change
 	unsigned int u;
 
 	XScuGic_Config *IntcConfig;
