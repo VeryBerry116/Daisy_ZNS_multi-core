@@ -79,12 +79,12 @@ void ProcessNvmeM2Req(void)
         if(reqCode == REQ_CODE_READ)
         {
         	// read point
-            read_nvme(startLba * NVME_BLOCKS_PER_SLICE, DstAddr, NVME_BLOCKS_PER_SLICE);
+            //read_nvme(startLba * NVME_BLOCKS_PER_SLICE, DstAddr, NVME_BLOCKS_PER_SLICE);
         }
         else
         {
         	// write point
-            write_nvme(startLba * NVME_BLOCKS_PER_SLICE, DstAddr, NVME_BLOCKS_PER_SLICE);
+            //write_nvme(startLba * NVME_BLOCKS_PER_SLICE, DstAddr, NVME_BLOCKS_PER_SLICE);
         }
 
         resHead = ipcQueueIdx[IPC_TYPE_RES]++;
