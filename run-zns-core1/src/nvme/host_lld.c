@@ -102,8 +102,9 @@ void dev_irq_handler()
 		PCIE_STATUS_REG pcieReg;
 		pcieReg.dword = IO_READ32(PCIE_STATUS_REG_ADDR);
 		xil_printf("PCIe Link: %d\r\n", pcieReg.pcieLinkUp);
-		if(pcieReg.pcieLinkUp == 0)
-			g_nvmeTask.status = NVME_TASK_RESET;
+		// kyj - temp
+		//if(pcieReg.pcieLinkUp == 0)
+			//g_nvmeTask.status = NVME_TASK_RESET;
 	}
 
 	if(devReg.busMaster == 1)
@@ -140,10 +141,11 @@ void dev_irq_handler()
 		nvmeReg.dword = IO_READ32(NVME_STATUS_REG_ADDR);
 		xil_printf("NVME CC.EN: %d\r\n", nvmeReg.ccEn);
 
-		if(nvmeReg.ccEn == 1)
+		// kyj - temp
+		/*if(nvmeReg.ccEn == 1)
 			g_nvmeTask.status = NVME_TASK_WAIT_CC_EN;
 		else
-			g_nvmeTask.status = NVME_TASK_WAIT_RESET;
+			g_nvmeTask.status = NVME_TASK_WAIT_RESET;*/
 	}
 
 	if(devReg.nvmeCcShn == 1)
@@ -153,7 +155,8 @@ void dev_irq_handler()
 		if(nvmeReg.ccShn != 0)
 		{
 			xil_printf("NVME CC.SHN: %d\r\n", nvmeReg.ccShn);
-			g_nvmeTask.status = NVME_TASK_SHUTDOWN;
+			// kyj - temp
+			//g_nvmeTask.status = NVME_TASK_SHUTDOWN;
 		}
 	}
 

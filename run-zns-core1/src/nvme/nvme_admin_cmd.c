@@ -67,7 +67,8 @@ unsigned int set_num_of_queue(unsigned int dword11)
 	xil_printf("Number of IO Completion Queues Requested (NCQR, zero-based): 0x%04X\r\n", requested.NCQR);
 
 	//IO submission queue allocating
-	if(requested.NSQR >= MAX_NUM_OF_IO_SQ)
+	// kyj - temp
+	/*if(requested.NSQR >= MAX_NUM_OF_IO_SQ)
 		g_nvmeTask.numOfIOSubmissionQueuesAllocated = MAX_NUM_OF_IO_SQ;
 	else
 		g_nvmeTask.numOfIOSubmissionQueuesAllocated = requested.NSQR + 1;//zero-based -> non zero-based
@@ -81,7 +82,7 @@ unsigned int set_num_of_queue(unsigned int dword11)
 	else
 		g_nvmeTask.numOfIOCompletionQueuesAllocated = requested.NCQR + 1;//zero-based -> non zero-based
 
-	allocated.NCQA = g_nvmeTask.numOfIOCompletionQueuesAllocated - 1;//non zero-based -> zero-based
+	allocated.NCQA = g_nvmeTask.numOfIOCompletionQueuesAllocated - 1;//non zero-based -> zero-based*/
 
 	xil_printf("Number of IO Submission Queues Allocated (NSQA, zero-based): 0x%04X\r\n", allocated.NSQA);
 	xil_printf("Number of IO Completion Queues Allocated (NCQA, zero-based): 0x%04X\r\n", allocated.NCQA);
@@ -93,8 +94,9 @@ unsigned int get_num_of_queue(unsigned int dword10)
 {
 	ADMIN_GET_FEATURES_NUMBER_OF_QUEUES_COMPLETE allocated;
 
-	allocated.NCQA = g_nvmeTask.numOfIOCompletionQueuesAllocated - 1;//non zero-based -> zero-based
-	allocated.NSQA = g_nvmeTask.numOfIOSubmissionQueuesAllocated - 1;//non zero-based -> zero-based
+	// kyj - temp
+	/*allocated.NCQA = g_nvmeTask.numOfIOCompletionQueuesAllocated - 1;//non zero-based -> zero-based
+	allocated.NSQA = g_nvmeTask.numOfIOSubmissionQueuesAllocated - 1;//non zero-based -> zero-based*/
 
 	return allocated.dword;
 }
@@ -134,7 +136,8 @@ void handle_set_features(NVME_ADMIN_COMMAND *nvmeAdminCmd, NVME_COMPLETION *nvme
 		case VOLATILE_WRITE_CACHE:
 		{
 			xil_printf("Set VWC: 0x%X\r\n", nvmeAdminCmd->dword11);
-			g_nvmeTask.cacheEn = (nvmeAdminCmd->dword11 & 0x1);
+			// kyj - temp
+			//g_nvmeTask.cacheEn = (nvmeAdminCmd->dword11 & 0x1);
 			nvmeCPL->dword[0] = 0x0;
 			nvmeCPL->specific = 0x0;
 			break;
@@ -202,9 +205,10 @@ void handle_get_features(NVME_ADMIN_COMMAND *nvmeAdminCmd, NVME_COMPLETION *nvme
 		case VOLATILE_WRITE_CACHE:
 		{
 			
-			xil_printf("Get VWC: 0x%X\r\n", g_nvmeTask.cacheEn);
+			//xil_printf("Get VWC: 0x%X\r\n", g_nvmeTask.cacheEn);
 			nvmeCPL->dword[0] = 0x0;
-			nvmeCPL->specific = g_nvmeTask.cacheEn;
+			// kyj - temp
+				//nvmeCPL->specific = g_nvmeTask.cacheEn;
 			break;
 		}
 		case POWER_MANAGEMENT:
@@ -258,7 +262,8 @@ void handle_create_io_sq(NVME_ADMIN_COMMAND *nvmeAdminCmd, NVME_COMPLETION *nvme
 	ASSERT(0 < sqInfo10.QID && sqInfo10.QID <= 8 && sqInfo10.QSIZE < 0x100 && 0 < sqInfo11.CQID && sqInfo11.CQID <= 8);
 
 	ioSqIdx = sqInfo10.QID - 1;
-	ioSqStatus = g_nvmeTask.ioSqInfo + ioSqIdx;
+	// kyj - temp
+	//ioSqStatus = g_nvmeTask.ioSqInfo + ioSqIdx;
 
 	ioSqStatus->valid = 1;
 	ioSqStatus->qSzie = sqInfo10.QSIZE;
@@ -284,7 +289,8 @@ void handle_delete_io_sq(NVME_ADMIN_COMMAND *nvmeAdminCmd, NVME_COMPLETION *nvme
 	xil_printf("Delete IO SQ, DW10: 0x%08X\r\n", sqInfo10.dword);
 
 	ioSqIdx = (unsigned int)sqInfo10.QID - 1;
-	ioSqStatus = g_nvmeTask.ioSqInfo + ioSqIdx;
+	// kyj - temp
+		//ioSqStatus = g_nvmeTask.ioSqInfo + ioSqIdx;
 
 	ioSqStatus->valid = 0;
 	ioSqStatus->cqVector = 0;
@@ -315,7 +321,8 @@ void handle_create_io_cq(NVME_ADMIN_COMMAND *nvmeAdminCmd, NVME_COMPLETION *nvme
 	ASSERT(cqInfo11.IV < 8 && cqInfo10.QSIZE < 0x100 && 0 < cqInfo10.QID && cqInfo10.QID <= 8);
 
 	ioCqIdx = cqInfo10.QID - 1;
-	ioCqStatus = g_nvmeTask.ioCqInfo + ioCqIdx;
+	// kyj - temp
+		//ioCqStatus = g_nvmeTask.ioCqInfo + ioCqIdx;
 
 	ioCqStatus->valid = 1;
 	ioCqStatus->qSzie = cqInfo10.QSIZE;
@@ -341,7 +348,8 @@ void handle_delete_io_cq(NVME_ADMIN_COMMAND *nvmeAdminCmd, NVME_COMPLETION *nvme
 	xil_printf("Delete IO CQ, DW10: 0x%08X\r\n", cqInfo10.dword);
 
 	ioCqIdx = (unsigned int)cqInfo10.QID - 1;
-	ioCqStatus = g_nvmeTask.ioCqInfo + ioCqIdx;
+	// kyj - temp
+		//ioCqStatus = g_nvmeTask.ioCqInfo + ioCqIdx;
 
 	ioCqStatus->valid = 0;
 	ioCqStatus->irqVector = 0;

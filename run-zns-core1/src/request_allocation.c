@@ -375,10 +375,10 @@ void PutToNvmeM2ReqQ(unsigned int reqSlotTag)
 {
     unsigned int chNo = 0;
 
-    if(reqPoolPtr->reqPool[reqSlotTag].logicalSliceAddr >= (nvme_m2_storage[0] / NVME_BLOCKS_PER_SLICE))
+    /*if(reqPoolPtr->reqPool[reqSlotTag].logicalSliceAddr >= (nvme_m2_storage[0] / NVME_BLOCKS_PER_SLICE))
     {
     	chNo = 1;
-    }
+    }*/
 
 
 	if(nvmeM2ReqQ[chNo].tailReq != REQ_SLOT_TAG_NONE)

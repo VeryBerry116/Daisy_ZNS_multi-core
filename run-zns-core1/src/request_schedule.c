@@ -139,7 +139,8 @@ void ProcessNvmeM2ResPerCh(unsigned int chNo)
 
 void IssueNvmeM2Res(unsigned int chNo)
 {
-    ProcessNvmeM2Res(chNo);
+	// kyj - temp
+    //ProcessNvmeM2Res(chNo);
 }
 
 void SchedulingNandReq()
