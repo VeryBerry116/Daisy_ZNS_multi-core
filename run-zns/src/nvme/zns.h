@@ -171,7 +171,7 @@ typedef struct NvmeZoneDescr {
     uint8_t     zal;
     uint8_t     rsvd3[4];
     uint64_t    zcap;
-    uint64_t    zslba;
+    uint64_t    zslba;		// zone start lba
     uint64_t    wp;
     uint8_t     rsvd32[32];
 } NvmeZoneDescr;
