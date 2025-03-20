@@ -1,0 +1,1 @@
+Multi-core ZNS SSDs with Daisy+ board and TOSHIBA NAND module
