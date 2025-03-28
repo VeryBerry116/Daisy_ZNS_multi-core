@@ -1,1 +1,1 @@
-Multi-core ZNS SSDs with Daisy+ board and TOSHIBA NAND module
+Multi-core Zoned Namespace SSDs with Daisy+ board and TOSHIBA NAND module
