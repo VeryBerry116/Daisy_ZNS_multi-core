@@ -4,3 +4,4 @@ SDK.log
 *.o
 *.log
 /run-zns-core1/Debug
+*.a
