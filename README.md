@@ -1,1 +1,1 @@
-Multi-core Zoned Namespace SSDs with Daisy+ OpenSSD board and TOSHIBA NAND modules
+Multi-core Zoned Namespace SSDs with Daisy+ OpenSSD board and TOSHIBA NAND modules.
